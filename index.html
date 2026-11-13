@@ -51,12 +51,11 @@
 </head>
 <body class="bg-brand-950 text-slate-200 font-sans antialiased selection:bg-brand-accent selection:text-black">
 
-    <!-- 頂部公告欄
+    <!-- ========================================================頂部公告欄
     <div class="bg-brand-900 border-b border-slate-800/80 py-2 px-4 text-xs text-center text-slate-400">
-            <!-- 頂部公告欄
-            <span>📸 2027 年「蘇格蘭高地秋季攝影工作坊」開放報名中！</span>
-        <a href="#workshops" class="text-brand-accent underline hover:text-amber-300 ml-2 font-medium">了解更多 &rarr;</a> -->
-    </div> -->
+            <span>📸 More photos coming up soon！</span>
+        <a href="#workshops" class="text-brand-accent underline hover:text-amber-300 ml-2 font-medium">了解更多 &rarr;</a>
+    </div>====================================================================== -->
 
     <!-- 主要導覽列 Navbar -->
     <header class="sticky top-0 z-40 bg-brand-950/90 backdrop-blur-md border-b border-slate-800/60 transition-all duration-300">
@@ -64,30 +63,32 @@
             <!-- 品牌 Logo -->
             <a href="#" class="flex flex-col group">
                 <span class="font-serif text-2xl font-bold tracking-wider text-slate-100 group-hover:text-brand-accent transition">Steve Liu</span>
-                <span class="text-[10px] tracking-[0.25em] text-slate-400 uppercase font-light">Photography</span>
+                <span class="text-[12px] tracking-[0.25em] text-slate-400 uppercase font-light">Photography</span>
             </a>
 
             <!-- 桌機選單 -->
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
                 <a href="#home" class="text-brand-accent hover:text-amber-300 transition">Home</a>
-                <a href="#about" class="text-slate-300 hover:text-brand-accent transition">About</a>
                 <a href="#favorites" class="text-slate-300 hover:text-brand-accent transition">Favorites</a>
+                <!-- a href="#favorites" class="text-slate-300 hover:text-brand-accent transition">Favorites</a>
+                -->
                 <div class="relative group py-2">
                     <button class="text-slate-300 group-hover:text-brand-accent flex items-center gap-1 transition">
-                        Gallery <i class="fa-solid font-xs fa-chevron-down text-[10px] opacity-70"></i>
+                        Landscape <i class="fa-solid font-xs fa-chevron-down text-[10px] opacity-70"></i>
                     </button>
                     <!-- 下拉選單 -->
                     <div class="absolute left-0 top-full hidden group-hover:block w-48 bg-brand-900 border border-slate-800 rounded-lg shadow-xl py-2 z-50">
-                        <a href="#portfolio" onclick="filterGallery('all')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">全部作品 All Works</a>
-                        <a href="#portfolio" onclick="filterGallery('mountain')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">壯麗山嶽 Mountains</a>
-                        <a href="#portfolio" onclick="filterGallery('coast')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">海岸與湖泊 Coasts & Lakes</a>
-                        <a href="#portfolio" onclick="filterGallery('forest')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">森林與秘境 Woodlands</a>
-                        <a href="#portfolio" onclick="filterGallery('night')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">夜空與極光 Nightscapes</a>
+                        <a href="#portfolio" onclick="filterGallery('all')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">All Works</a>
+                        <a href="#portfolio" onclick="filterGallery('italy')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">Italy</a>
+                        <a href="#portfolio" onclick="filterGallery('germany')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">Germany</a>
+                        <a href="#portfolio" onclick="filterGallery('japan')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">Japan</a>
+                        <a href="#portfolio" onclick="filterGallery('spain')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">Spain</a>
                     </div>
                 </div>
 
-                <a href="#shop" class="text-slate-300 hover:text-brand-accent transition">藝術典藏藝廊 Shop</a>
-                <a href="#contact" class="text-slate-300 hover:text-brand-accent transition">聯絡與合作 Contact</a>
+                <a href="#black and white" class="text-slate-300 hover:text-brand-accent transition">Black and White</a>
+                <a href="#impressionistic" class="text-slate-300 hover:text-brand-accent transition">Impressionistic</a>
+                <a href="#contact" class="text-slate-300 hover:text-brand-accent transition">Contact</a>
             </nav>
 
             <!-- 右側社群與搜尋 -->
@@ -105,10 +106,11 @@
 
         <!-- 行動裝置選單抽屜 -->
         <div id="mobile-menu" class="hidden md:hidden bg-brand-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
-            <a href="#home" class="block text-slate-200 py-1 font-medium">首頁 Home</a>
-            <a href="#about" class="block text-slate-200 py-1 font-medium">關於攝影師 About</a>
-            <a href="#portfolio" class="block text-slate-200 py-1 font-medium">作品集 Portfolio</a>
-            <a href="#workshops" class="block text-slate-200 py-1 font-medium">攝影工作坊 Workshops</a>
+            <a href="#home" class="block text-slate-200 py-1 font-medium">Home</a>
+            <a href="#favorites" class="block text-slate-200 py-1 font-medium">Favorites</a>
+            <a href="#landscape" class="block text-slate-200 py-1 font-medium">Landscape</a>
+            <a href="#black and white" class="block text-slate-200 py-1 font-medium">Black and White</a>
+            <a href="#impressionistic" class="block text-slate-200 py-1 font-medium">Impressionistic</a>
             <a href="#contact" class="block text-slate-200 py-1 font-medium">聯絡 Contact</a>
         </div>
     </header>
@@ -126,20 +128,20 @@
         <!-- 標題與簡介 -->
         <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
             <span class="inline-block px-4 py-1.5 rounded-full bg-slate-900/80 border border-brand-accent/40 text-brand-accent text-xs font-semibold tracking-widest uppercase mb-4 backdrop-blur-sm">
-                Fine Art Landscape Photography
+                Travel, Landscape Photography
             </span>
-            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
-                捕捉自然光影的詩意與純粹
+            <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                Let there be light...
             </h1>
             <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-light mb-10 leading-relaxed">
-                我是 Daniel Long，一位專注於大自然與風光攝影的創作者。歡迎一同探索荒野深處的沉靜與動人時刻。
-            </p>
+                I am an amateur photographer, like to create nature and landscape photography while traveling. You are welcome to join me to explore the beautiful places around the world.
+                </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#portfolio" class="px-8 py-3.5 bg-brand-accent hover:bg-amber-400 text-slate-950 font-semibold rounded-md shadow-lg transition duration-200">
-                    瀏覽作品集 Explore Portfolio
+                    Collection/Portfolio
                 </a>
                 <a href="#about" class="px-8 py-3.5 bg-slate-900/80 hover:bg-slate-800 text-white font-medium rounded-md border border-slate-700 backdrop-blur-sm transition duration-200">
-                    關於我的歷程 About Me
+                    About Me
                 </a>
             </div>
         </div>
@@ -150,15 +152,16 @@
         </a>
     </section>
 
-    <!-- 攝影師簡介區塊 About Section -->
+<!-- ====================================================comment out this block
+    <!-- 攝影師簡介區塊 About Section --
     <section id="about" class="py-20 bg-brand-950 border-b border-slate-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <!-- 攝影師肖像照片 -->
+                <!-- 攝影師肖像照片 --
                 <div class="lg:col-span-5 relative">
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
                         <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1000&auto=format&fit=crop" 
-                             alt="Daniel Long" 
+                             alt="my name here" 
                              class="w-full h-[450px] object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                             <div>
@@ -167,11 +170,11 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 裝飾方塊 -->
+                    <!-- 裝飾方塊 --
                     <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-accent/10 rounded-2xl border border-brand-accent/20 -z-10 hidden sm:block"></div>
                 </div>
 
-                <!-- 簡介文字 -->
+                <!-- 簡介文字 --
                 <div class="lg:col-span-7 space-y-6">
                     <div class="inline-flex items-center gap-2 text-brand-accent text-sm font-semibold tracking-wider uppercase">
                         <span class="w-8 h-[2px] bg-brand-accent"></span> 關於 DRL Photography
@@ -186,7 +189,7 @@
                         每一幅作品的背後，都代表著在嚴寒晨曦中的等待、在陡峭山嶺間的步行，以及對光影變幻的無比熱情。我希望能透過我的鏡頭，將這份震撼與平靜帶入您的空間。
                     </p>
                     
-                    <!-- 統計數據 -->
+                    <!-- 統計數據 --
                     <div class="grid grid-cols-3 gap-6 pt-4 border-t border-slate-800">
                         <div>
                             <span class="block text-3xl font-serif font-bold text-white">15+</span>
@@ -205,6 +208,7 @@
             </div>
         </div>
     </section>
+====================================================================== -->
 
     <!-- 作品集 Portfolio Section -->
     <section id="portfolio" class="py-24 bg-brand-900">
@@ -233,7 +237,7 @@
                      data-category="mountain"
                      onclick="openLightbox(0)">
                     <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
-                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop" 
+                        <img src="https://sklphoto.github.io/collection/images/DLM1088D.jpg?q=80&w=1200&auto=format&fit=crop" 
                              alt="Highland Sunrise" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
@@ -249,7 +253,7 @@
                      data-category="coast"
                      onclick="openLightbox(1)">
                     <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" 
+                        <img src="https://sklphoto.github.io/collection/images/DLM1095D.jpg?q=80&w=1200&auto=format&fit=crop" 
                              alt="Coastal Waves" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
@@ -265,7 +269,7 @@
                      data-category="night"
                      onclick="openLightbox(2)">
                     <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
-                        <img src="https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?q=80&w=1200&auto=format&fit=crop" 
+                        <img src="https://sklphoto.github.io/collection/images/DLM1113D.jpg?q=80&w=1200&auto=format&fit=crop" 
                              alt="Aurora Borealis" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
@@ -403,9 +407,9 @@
     <!-- 電子報訂閱區塊 Newsletter Section -->
     <section class="py-16 bg-gradient-to-r from-brand-900 via-slate-900 to-brand-900 border-y border-slate-800">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-3">加入 DRL 攝影社群</h3>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-3">加入 攝影社群</h3>
             <p class="text-slate-400 text-sm mb-8 font-light">
-                訂閱電子報，第一時間獲取最新相片典藏、拍攝地點指南與獨家攝影折扣資訊。
+                ________________
             </p>
             <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="handleSubscribe(event)">
                 <input type="email" required placeholder="輸入您的 Email 地址..." class="flex-grow px-4 py-3 rounded-md bg-brand-950 border border-slate-700 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-brand-accent">
@@ -422,26 +426,27 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-900">
             <!-- 品牌說明 -->
             <div class="space-y-4">
-                <a href="#" class="font-serif text-xl font-bold text-white">DANIEL LONG</a>
-                <p class="text-xs text-slate-400 leading-relaxed font-light">
-                    專注於捕捉英倫高地與世界極境風光的專業攝影工作室。提供藝術微噴相片典藏與實地攝影教學。
+                <a href="#" class="font-serif text-xl font-bold text-white">Steve Liu</a>
+                <!--p class="text-xs text-slate-400 leading-relaxed font-light" -->
+                <p>
+                    Photography
                 </p>
             </div>
 
             <!-- 快速連結 -->
             <div>
-                <h4 class="text-slate-200 font-semibold mb-4 text-xs uppercase tracking-wider">選單導覽</h4>
+                <h4 class="text-slate-200 font-semibold mb-4 text-xs uppercase tracking-wider">Sitemap</h4>
                 <ul class="space-y-2 text-xs">
-                    <li><a href="#home" class="hover:text-brand-accent transition">首頁 Home</a></li>
-                    <li><a href="#about" class="hover:text-brand-accent transition">關於 Daniel</a></li>
-                    <li><a href="#portfolio" class="hover:text-brand-accent transition">作品藝廊 Portfolio</a></li>
-                    <li><a href="#workshops" class="hover:text-brand-accent transition">攝影工作坊 Tours</a></li>
+                    <li><a href="#home" class="hover:text-brand-accent transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-brand-accent transition">Portfolio</a></li>
+                    <li><a href="#portfolio" class="hover:text-brand-accent transition">About</a></li>
+                    <li><a href="#workshops" class="hover:text-brand-accent transition">Comments</a></li>
                 </ul>
             </div>
 
             <!-- 聯絡資訊 -->
             <div>
-                <h4 class="text-slate-200 font-semibold mb-4 text-xs uppercase tracking-wider">聯絡方式</h4>
+                <h4 class="text-slate-200 font-semibold mb-4 text-xs uppercase tracking-wider">Contact Me</h4>
                 <ul class="space-y-2 text-xs">
                     <li><i class="fa-solid fa-envelope mr-2 text-slate-500"></i> info@drlphotography.co.uk</li>
                     <li><i class="fa-solid fa-location-dot mr-2 text-slate-500"></i> Inverness, Scottish Highlands, UK</li>
@@ -451,20 +456,20 @@
 
             <!-- 版權與警告 -->
             <div>
-                <h4 class="text-slate-200 font-semibold mb-4 text-xs uppercase tracking-wider">智慧財產權與浮水印</h4>
+                <h4 class="text-slate-200 font-semibold mb-4 text-xs uppercase tracking-wider">Copyright Warning</h4>
                 <p class="text-[11px] leading-relaxed text-slate-500">
-                    本網站展示之所有攝影作品版權均屬 Daniel Long 拍攝者所有。未經明確書面授權許可，嚴禁任何形式之轉載、重製或商業利用。
+                    The copyright for all photographic works displayed on this website belongs to the author. Any form of reproduction, duplication, or commercial use without explicit written authorization is strictly prohibited.
                 </p>
             </div>
         </div>
 
         <!-- 底欄 -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
-            <p>&copy; 2026 DRL Photography. All rights reserved.</p>
+            <p>&copy; 2026 Steve Liu Photography. All rights reserved.</p>
             <div class="flex space-x-6 text-slate-500">
-                <a href="#" class="hover:text-slate-300">隱私權政策 Privacy Policy</a>
-                <a href="#" class="hover:text-slate-300">服務條款 Terms</a>
-                <a href="#" class="hover:text-slate-300">Cookie 政策</a>
+                <a href="#" class="hover:text-slate-300">Privacy Policy</a>
+                <a href="#" class="hover:text-slate-300">Terms</a>
+                <a href="#" class="hover:text-slate-300">Cookies</a>
             </div>
         </div>
     </footer>

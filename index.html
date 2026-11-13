@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steve Liu Photography | Travel, Landscape, and more...</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome 圖標庫 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f4f6f8',
+                            100: '#e5e9ee',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#080d1a',
+                            accent: '#d4af37' // 典雅金
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 防右鍵保護圖片示意提示 */
+        .watermark-overlay {
+            background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+        }
+        /* 隱藏滾動條 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-brand-950 text-slate-200 font-sans antialiased selection:bg-brand-accent selection:text-black">
+
+    <!-- 頂部公告欄
+    <div class="bg-brand-900 border-b border-slate-800/80 py-2 px-4 text-xs text-center text-slate-400">
+            <!-- 頂部公告欄
+            <span>📸 2027 年「蘇格蘭高地秋季攝影工作坊」開放報名中！</span>
+        <a href="#workshops" class="text-brand-accent underline hover:text-amber-300 ml-2 font-medium">了解更多 &rarr;</a> -->
+    </div> -->
+
+    <!-- 主要導覽列 Navbar -->
+    <header class="sticky top-0 z-40 bg-brand-950/90 backdrop-blur-md border-b border-slate-800/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- 品牌 Logo -->
+            <a href="#" class="flex flex-col group">
+                <span class="font-serif text-2xl font-bold tracking-wider text-slate-100 group-hover:text-brand-accent transition">Steve Liu</span>
+                <span class="text-[10px] tracking-[0.25em] text-slate-400 uppercase font-light">Photography</span>
+            </a>
+
+            <!-- 桌機選單 -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#home" class="text-brand-accent hover:text-amber-300 transition">Home</a>
+                <a href="#about" class="text-slate-300 hover:text-brand-accent transition">About</a>
+                <a href="#favorites" class="text-slate-300 hover:text-brand-accent transition">Favorites</a>
+                <div class="relative group py-2">
+                    <button class="text-slate-300 group-hover:text-brand-accent flex items-center gap-1 transition">
+                        Gallery <i class="fa-solid font-xs fa-chevron-down text-[10px] opacity-70"></i>
+                    </button>
+                    <!-- 下拉選單 -->
+                    <div class="absolute left-0 top-full hidden group-hover:block w-48 bg-brand-900 border border-slate-800 rounded-lg shadow-xl py-2 z-50">
+                        <a href="#portfolio" onclick="filterGallery('all')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">全部作品 All Works</a>
+                        <a href="#portfolio" onclick="filterGallery('mountain')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">壯麗山嶽 Mountains</a>
+                        <a href="#portfolio" onclick="filterGallery('coast')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">海岸與湖泊 Coasts & Lakes</a>
+                        <a href="#portfolio" onclick="filterGallery('forest')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">森林與秘境 Woodlands</a>
+                        <a href="#portfolio" onclick="filterGallery('night')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">夜空與極光 Nightscapes</a>
+                    </div>
+                </div>
+
+                <a href="#shop" class="text-slate-300 hover:text-brand-accent transition">藝術典藏藝廊 Shop</a>
+                <a href="#contact" class="text-slate-300 hover:text-brand-accent transition">聯絡與合作 Contact</a>
+            </nav>
+
+            <!-- 右側社群與搜尋 -->
+            <div class="hidden lg:flex items-center space-x-4 text-slate-400">
+                <a href="https://instagram.com" target="_blank" class="hover:text-brand-accent transition"><i class="fa-brands fa-instagram text-lg"></i></a>
+                <a href="https://facebook.com" target="_blank" class="hover:text-brand-accent transition"><i class="fa-brands fa-facebook-f text-base"></i></a>
+                <a href="https://youtube.com" target="_blank" class="hover:text-brand-accent transition"><i class="fa-brands fa-youtube text-lg"></i></a>
+            </div>
+
+            <!-- 行動裝置 Hamburger 選單按鈕 -->
+            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- 行動裝置選單抽屜 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block text-slate-200 py-1 font-medium">首頁 Home</a>
+            <a href="#about" class="block text-slate-200 py-1 font-medium">關於攝影師 About</a>
+            <a href="#portfolio" class="block text-slate-200 py-1 font-medium">作品集 Portfolio</a>
+            <a href="#workshops" class="block text-slate-200 py-1 font-medium">攝影工作坊 Workshops</a>
+            <a href="#contact" class="block text-slate-200 py-1 font-medium">聯絡 Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero 主視覺 Banner -->
+    <section id="home" class="relative h-[85vh] flex items-center justify-center overflow-hidden">
+        <!-- 背景圖層 -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2000&auto=format&fit=crop" 
+                 alt="Landscape Banner" 
+                 class="w-full h-full object-cover object-center filter brightness-75 scale-105 transition-transform duration-[10000ms] hover:scale-100">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-950 via-brand-950/40 to-transparent"></div>
+        </div>
+
+        <!-- 標題與簡介 -->
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-slate-900/80 border border-brand-accent/40 text-brand-accent text-xs font-semibold tracking-widest uppercase mb-4 backdrop-blur-sm">
+                Fine Art Landscape Photography
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                捕捉自然光影的詩意與純粹
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-light mb-10 leading-relaxed">
+                我是 Daniel Long，一位專注於大自然與風光攝影的創作者。歡迎一同探索荒野深處的沉靜與動人時刻。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#portfolio" class="px-8 py-3.5 bg-brand-accent hover:bg-amber-400 text-slate-950 font-semibold rounded-md shadow-lg transition duration-200">
+                    瀏覽作品集 Explore Portfolio
+                </a>
+                <a href="#about" class="px-8 py-3.5 bg-slate-900/80 hover:bg-slate-800 text-white font-medium rounded-md border border-slate-700 backdrop-blur-sm transition duration-200">
+                    關於我的歷程 About Me
+                </a>
+            </div>
+        </div>
+
+        <!-- 向下滾動指示指標 -->
+        <a href="#portfolio" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 text-slate-400 hover:text-brand-accent transition animate-bounce">
+            <i class="fa-solid fa-arrow-down text-xl"></i>
+        </a>
+    </section>
+
+    <!-- 攝影師簡介區塊 About Section -->
+    <section id="about" class="py-20 bg-brand-950 border-b border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- 攝影師肖像照片 -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1000&auto=format&fit=crop" 
+                             alt="Daniel Long" 
+                             class="w-full h-[450px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-serif text-white font-semibold">Daniel Long</h3>
+                                <p class="text-xs text-brand-accent">Nature Photographer & Guide</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 裝飾方塊 -->
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-accent/10 rounded-2xl border border-brand-accent/20 -z-10 hidden sm:block"></div>
+                </div>
+
+                <!-- 簡介文字 -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-brand-accent text-sm font-semibold tracking-wider uppercase">
+                        <span class="w-8 h-[2px] bg-brand-accent"></span> 關於 DRL Photography
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-100 leading-snug">
+                        尋找大自然的靜謐光影與壯麗瞬間
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed font-light">
+                        多年來，我的腳步遍佈了英國高地、冰島極境以及歐洲的巍峨山脈。對我而言，攝影不僅僅是按下快門記錄景致，更是一場與大自然深度的對話。
+                    </p>
+                    <p class="text-slate-400 leading-relaxed font-light text-sm">
+                        每一幅作品的背後，都代表著在嚴寒晨曦中的等待、在陡峭山嶺間的步行，以及對光影變幻的無比熱情。我希望能透過我的鏡頭，將這份震撼與平靜帶入您的空間。
+                    </p>
+                    
+                    <!-- 統計數據 -->
+                    <div class="grid grid-cols-3 gap-6 pt-4 border-t border-slate-800">
+                        <div>
+                            <span class="block text-3xl font-serif font-bold text-white">15+</span>
+                            <span class="text-xs text-slate-400">年風景攝影經驗</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-serif font-bold text-white">40+</span>
+                            <span class="text-xs text-slate-400">舉辦攝影工作坊</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-serif font-bold text-white">100%</span>
+                            <span class="text-xs text-slate-400">原創實景拍攝</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品集 Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-brand-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 區塊標題與說明 -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Landscape Portfolio</h2>
+                <p class="text-slate-400 text-sm sm:text-base font-light">
+                    按類別探索精選典藏相片。點擊任何照片可開啟高解析度放大檢視與詳盡的攝影參數資料。
+                </p>
+            </div>
+
+            <!-- 分類篩選按鈕列 -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12">
+                <button onclick="filterGallery('all')" class="filter-btn active px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition bg-brand-accent text-slate-950 shadow-md">全部作品 All</button>
+                <button onclick="filterGallery('mountain')" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">高山連峰 Mountains</button>
+                <button onclick="filterGallery('coast')" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">海岸湖泊 Lakes & Coasts</button>
+                <button onclick="filterGallery('forest')" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">森林秘境 Forests</button>
+                <button onclick="filterGallery('night')" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">夜空極光 Aurora & Night</button>
+            </div>
+
+            <!-- 作品網格 (Photo Grid) -->
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- 相片項目 1 -->
+                <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-950 border border-slate-800 shadow-xl cursor-pointer" 
+                     data-category="mountain"
+                     onclick="openLightbox(0)">
+                    <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Highland Sunrise" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                        <span class="text-xs text-brand-accent font-semibold tracking-widest uppercase">Scottish Highlands</span>
+                        <h3 class="text-xl font-serif font-bold text-white mt-1">高地晨曦金光</h3>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Canon EOS R5 | 24mm | f/11 | 1/4s | ISO 100</p>
+                    </div>
+                </div>
+
+                <!-- 相片項目 2 -->
+                <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-950 border border-slate-800 shadow-xl cursor-pointer" 
+                     data-category="coast"
+                     onclick="openLightbox(1)">
+                    <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Coastal Waves" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                        <span class="text-xs text-brand-accent font-semibold tracking-widest uppercase">Isle of Skye</span>
+                        <h3 class="text-xl font-serif font-bold text-white mt-1">斯凱島靜謐海岸</h3>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Sony A7R IV | 16mm | f/16 | 2.5s | ISO 50</p>
+                    </div>
+                </div>
+
+                <!-- 相片項目 3 -->
+                <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-950 border border-slate-800 shadow-xl cursor-pointer" 
+                     data-category="night"
+                     onclick="openLightbox(2)">
+                    <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
+                        <img src="https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Aurora Borealis" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                        <span class="text-xs text-brand-accent font-semibold tracking-widest uppercase">Iceland</span>
+                        <h3 class="text-xl font-serif font-bold text-white mt-1">冰島極光夜空</h3>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Nikon Z9 | 14mm | f/2.8 | 6s | ISO 3200</p>
+                    </div>
+                </div>
+
+                <!-- 相片項目 4 -->
+                <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-950 border border-slate-800 shadow-xl cursor-pointer" 
+                     data-category="forest"
+                     onclick="openLightbox(3)">
+                    <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
+                        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Misty Forest" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                        <span class="text-xs text-brand-accent font-semibold tracking-widest uppercase">Black Forest</span>
+                        <h3 class="text-xl font-serif font-bold text-white mt-1">黑森林迷霧晨光</h3>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Canon EOS R5 | 70mm | f/8 | 1/15s | ISO 200</p>
+                    </div>
+                </div>
+
+                <!-- 相片項目 5 -->
+                <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-950 border border-slate-800 shadow-xl cursor-pointer" 
+                     data-category="mountain"
+                     onclick="openLightbox(4)">
+                    <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Dolomites Range" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                        <span class="text-xs text-brand-accent font-semibold tracking-widest uppercase">Dolomites, Italy</span>
+                        <h3 class="text-xl font-serif font-bold text-white mt-1">多洛米蒂白雲石山脈</h3>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Fujifilm GFX 100S | 35mm | f/11 | 1/8s | ISO 100</p>
+                    </div>
+                </div>
+
+                <!-- 相片項目 6 -->
+                <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-950 border border-slate-800 shadow-xl cursor-pointer" 
+                     data-category="coast"
+                     onclick="openLightbox(5)">
+                    <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
+                        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Alpine Lake Reflection" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                        <span class="text-xs text-brand-accent font-semibold tracking-widest uppercase">Swiss Alps</span>
+                        <h3 class="text-xl font-serif font-bold text-white mt-1">阿爾卑斯高山倒影湖</h3>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Sony A7R IV | 24mm | f/9 | 1/60s | ISO 100</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 攝影工作坊 Workshops Section -->
+    <section id="workshops" class="py-24 bg-brand-950 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div>
+                    <span class="text-brand-accent text-sm font-semibold tracking-widest uppercase">Workshops & Photography Tours</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">攝影工作坊與實地導覽</h2>
+                </div>
+                <p class="text-slate-400 max-w-md text-sm mt-4 md:mt-0">
+                    不論您是攝影新手還是資深玩家，加入我的私人 1-on-1 或小班制拍攝行程，提升您的構圖與光影掌控力。
+                </p>
+            </div>
+
+            <!-- 卡片列表 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 卡片 1 -->
+                <div class="bg-brand-900 rounded-2xl p-8 border border-slate-800 hover:border-brand-accent/50 transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/30 flex items-center justify-center text-brand-accent mb-6">
+                            <i class="fa-solid fa-mountain text-xl"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 font-medium">3 Days Masterclass</span>
+                        <h3 class="text-xl font-serif font-bold text-white mt-1 mb-3">蘇格蘭高地風光實戰班</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            深入高地荒野，學習在多變的天氣下捕捉極具戲劇張力的晨昏光影與長曝光海岸技巧。
+                        </p>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-brand-accent mb-4">£650 <span class="text-xs text-slate-400 font-normal">/ 人</span></div>
+                        <button onclick="openBookingModal('蘇格蘭高地風光實戰班')" class="w-full py-3 rounded-lg bg-slate-800 hover:bg-brand-accent hover:text-slate-950 text-white font-medium text-sm transition">預約報名</button>
+                    </div>
+                </div>
+
+                <!-- 卡片 2 -->
+                <div class="bg-brand-900 rounded-2xl p-8 border border-brand-accent/40 shadow-2xl relative flex flex-col justify-between">
+                    <span class="absolute -top-3 right-6 px-3 py-1 bg-brand-accent text-slate-950 font-bold text-[10px] rounded-full uppercase tracking-wider">熱門首選</span>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/30 flex items-center justify-center text-brand-accent mb-6">
+                            <i class="fa-solid fa-user-gear text-xl"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 font-medium">1-on-1 Personalized Day</span>
+                        <h3 class="text-xl font-serif font-bold text-white mt-1 mb-3">1對1 一日精準指導日</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            量身打造的拍攝行程與後製技巧教學（Lightroom/Photoshop），全天候補光與現場隨時指點。
+                        </p>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-brand-accent mb-4">£380 <span class="text-xs text-slate-400 font-normal">/ 全天</span></div>
+                        <button onclick="openBookingModal('1對1 一日精準指導日')" class="w-full py-3 rounded-lg bg-brand-accent hover:bg-amber-400 text-slate-950 font-semibold text-sm transition shadow-lg">立即預定</button>
+                    </div>
+                </div>
+
+                <!-- 卡片 3 -->
+                <div class="bg-brand-900 rounded-2xl p-8 border border-slate-800 hover:border-brand-accent/50 transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/30 flex items-center justify-center text-brand-accent mb-6">
+                            <i class="fa-solid fa-snowflake text-xl"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 font-medium">5 Days Expedition</span>
+                        <h3 class="text-xl font-serif font-bold text-white mt-1 mb-3">冰島極光與藍冰洞探索</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            冬季遠征冰島，追尋夢幻綠色極光與沉積千年的黑沙灘冰塊，體驗極致冰雪景緻。
+                        </p>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-brand-accent mb-4">£1,450 <span class="text-xs text-slate-400 font-normal">/ 人</span></div>
+                        <button onclick="openBookingModal('冰島極光與藍冰洞探索')" class="w-full py-3 rounded-lg bg-slate-800 hover:bg-brand-accent hover:text-slate-950 text-white font-medium text-sm transition">預約報名</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 電子報訂閱區塊 Newsletter Section -->
+    <section class="py-16 bg-gradient-to-r from-brand-900 via-slate-900 to-brand-900 border-y border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-3">加入 DRL 攝影社群</h3>
+            <p class="text-slate-400 text-sm mb-8 font-light">
+                訂閱電子報，第一時間獲取最新相片典藏、拍攝地點指南與獨家攝影折扣資訊。
+            </p>
+            <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="handleSubscribe(event)">
+                <input type="email" required placeholder="輸入您的 Email 地址..." class="flex-grow px-4 py-3 rounded-md bg-brand-950 border border-slate-700 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-brand-accent">
+                <button type="submit" class="px-6 py-3 bg-brand-accent hover:bg-amber-400 text-slate-950 font-semibold text-sm rounded-md transition shadow-md whitespace-nowrap">
+                    免費訂閱
+                </button>
+            </form>
+            <div id="subscribe-msg" class="hidden text-brand-accent text-xs mt-3">感謝您的訂閱！我們將不定時發送最新作品與拍攝指南。</div>
+        </div>
+    </section>
+
+    <!-- 頁尾 Footer -->
+    <footer id="contact" class="bg-brand-950 pt-16 pb-12 text-slate-400 border-t border-slate-900 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-900">
+            <!-- 品牌說明 -->
+            <div class="space-y-4">
+                <a href="#" class="font-serif text-xl font-bold text-white">DANIEL LONG</a>
+                <p class="text-xs text-slate-400 leading-relaxed font-light">
+                    專注於捕捉英倫高地與世界極境風光的專業攝影工作室。提供藝術微噴相片典藏與實地攝影教學。
+                </p>
+            </div>
+
+            <!-- 快速連結 -->
+            <div>
+                <h4 class="text-slate-200 font-semibold mb-4 text-xs uppercase tracking-wider">選單導覽</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#home" class="hover:text-brand-accent transition">首頁 Home</a></li>
+                    <li><a href="#about" class="hover:text-brand-accent transition">關於 Daniel</a></li>
+                    <li><a href="#portfolio" class="hover:text-brand-accent transition">作品藝廊 Portfolio</a></li>
+                    <li><a href="#workshops" class="hover:text-brand-accent transition">攝影工作坊 Tours</a></li>
+                </ul>
+            </div>
+
+            <!-- 聯絡資訊 -->
+            <div>
+                <h4 class="text-slate-200 font-semibold mb-4 text-xs uppercase tracking-wider">聯絡方式</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><i class="fa-solid fa-envelope mr-2 text-slate-500"></i> info@drlphotography.co.uk</li>
+                    <li><i class="fa-solid fa-location-dot mr-2 text-slate-500"></i> Inverness, Scottish Highlands, UK</li>
+                    <li><i class="fa-solid fa-phone mr-2 text-slate-500"></i> +44 (0) 1234 567 890</li>
+                </ul>
+            </div>
+
+            <!-- 版權與警告 -->
+            <div>
+                <h4 class="text-slate-200 font-semibold mb-4 text-xs uppercase tracking-wider">智慧財產權與浮水印</h4>
+                <p class="text-[11px] leading-relaxed text-slate-500">
+                    本網站展示之所有攝影作品版權均屬 Daniel Long 拍攝者所有。未經明確書面授權許可，嚴禁任何形式之轉載、重製或商業利用。
+                </p>
+            </div>
+        </div>
+
+        <!-- 底欄 -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+            <p>&copy; 2026 DRL Photography. All rights reserved.</p>
+            <div class="flex space-x-6 text-slate-500">
+                <a href="#" class="hover:text-slate-300">隱私權政策 Privacy Policy</a>
+                <a href="#" class="hover:text-slate-300">服務條款 Terms</a>
+                <a href="#" class="hover:text-slate-300">Cookie 政策</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox 相片燈箱 Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden flex flex-col justify-between p-4 sm:p-8 backdrop-blur-md">
+        <!-- 頂部控制欄 -->
+        <div class="flex justify-between items-center text-white z-10">
+            <span id="lightbox-counter" class="text-xs font-mono text-slate-400">1 / 6</span>
+            <button onclick="closeLightbox()" class="text-slate-400 hover:text-white text-2xl p-2 transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- 燈箱圖片區域 -->
+        <div class="relative flex-1 flex items-center justify-center my-4 overflow-hidden">
+            <button onclick="prevImage()" class="absolute left-2 sm:left-6 z-10 text-white/70 hover:text-white bg-black/40 hover:bg-black/80 rounded-full w-12 h-12 flex items-center justify-center transition">
+                <i class="fa-solid fa-chevron-left text-lg"></i>
+            </button>
+
+            <div class="relative max-h-full max-w-5xl flex items-center justify-center select-none">
+                <img id="lightbox-img" src="" alt="" class="max-h-[70vh] max-w-full object-contain rounded-md shadow-2xl">
+                <!-- 浮水印 overlay -->
+                <div class="absolute bottom-4 right-4 pointer-events-none text-white/40 text-xs font-serif tracking-widest bg-black/40 px-3 py-1 rounded backdrop-blur-sm">
+                    © DRL Photography
+                </div>
+            </div>
+
+            <button onclick="nextImage()" class="absolute right-2 sm:right-6 z-10 text-white/70 hover:text-white bg-black/40 hover:bg-black/80 rounded-full w-12 h-12 flex items-center justify-center transition">
+                <i class="fa-solid fa-chevron-right text-lg"></i>
+            </button>
+        </div>
+
+        <!-- 燈箱底欄資訊 -->
+        <div class="text-center max-w-2xl mx-auto z-10">
+            <h4 id="lightbox-title" class="font-serif text-xl font-bold text-white"></h4>
+            <p id="lightbox-location" class="text-xs text-brand-accent mt-1"></p>
+            <p id="lightbox-exif" class="text-xs text-slate-400 mt-2 font-mono bg-slate-900/80 py-1.5 px-4 rounded-full inline-block border border-slate-800"></p>
+        </div>
+    </div>
+
+    <!-- 預約 Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-50 bg-black/80 hidden items-center justify-center p-4">
+        <div class="bg-brand-900 border border-slate-800 rounded-2xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl">
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <h3 class="text-2xl font-serif font-bold text-white mb-1">預約課程與導覽</h3>
+            <p id="modal-course-name" class="text-xs text-brand-accent font-medium mb-6"></p>
+            
+            <form onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">您的姓名 Name</label>
+                    <input type="text" required class="w-full px-3 py-2 bg-brand-950 border border-slate-700 rounded text-slate-100 text-sm focus:outline-none focus:border-brand-accent">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Email 信箱</label>
+                    <input type="email" required class="w-full px-3 py-2 bg-brand-950 border border-slate-700 rounded text-slate-100 text-sm focus:outline-none focus:border-brand-accent">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">預計報名日期 Preferred Date</label>
+                    <input type="date" required class="w-full px-3 py-2 bg-brand-950 border border-slate-700 rounded text-slate-100 text-sm focus:outline-none focus:border-brand-accent">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">備註說明與需求 Message</label>
+                    <textarea rows="3" class="w-full px-3 py-2 bg-brand-950 border border-slate-700 rounded text-slate-100 text-sm focus:outline-none focus:border-brand-accent"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 bg-brand-accent hover:bg-amber-400 text-slate-950 font-semibold rounded text-sm transition">送出預約申請</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript 腳本邏輯 -->
+    <script>
+        // 作品集資料
+        const galleryItems = [
+            {
+                src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop",
+                title: "高地晨曦金光",
+                location: "Scottish Highlands, UK",
+                exif: "Canon EOS R5 | 24mm | f/11 | 1/4s | ISO 100"
+            },
+            {
+                src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop",
+                title: "斯凱島靜謐海岸",
+                location: "Isle of Skye, UK",
+                exif: "Sony A7R IV | 16mm | f/16 | 2.5s | ISO 50"
+            },
+            {
+                src: "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?q=80&w=1200&auto=format&fit=crop",
+                title: "冰島極光夜空",
+                location: "Jökulsárlón, Iceland",
+                exif: "Nikon Z9 | 14mm | f/2.8 | 6s | ISO 3200"
+            },
+            {
+                src: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop",
+                title: "黑森林迷霧晨光",
+                location: "Black Forest, Germany",
+                exif: "Canon EOS R5 | 70mm | f/8 | 1/15s | ISO 200"
+            },
+            {
+                src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop",
+                title: "多洛米蒂白雲石山脈",
+                location: "Dolomites, Italy",
+                exif: "Fujifilm GFX 100S | 35mm | f/11 | 1/8s | ISO 100"
+            },
+            {
+                src: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1200&auto=format&fit=crop",
+                title: "阿爾卑斯高山倒影湖",
+                location: "Swiss Alps, Switzerland",
+                exif: "Sony A7R IV | 24mm | f/9 | 1/60s | ISO 100"
+            }
+        ];
+
+        let currentIndex = 0;
+
+        // 手機版選單切換
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 作品集分類篩選
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // 按鈕樣式切換
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-accent', 'text-slate-950', 'shadow-md');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
+            });
+
+            event.target.classList.remove('bg-slate-800', 'text-slate-300');
+            event.target.classList.add('bg-brand-accent', 'text-slate-950', 'shadow-md');
+
+            // 項目顯示與隱藏
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Lightbox 控制
+        function openLightbox(index) {
+            currentIndex = index;
+            updateLightbox();
+            document.getElementById('lightbox').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // 防止背景滾動
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function updateLightbox() {
+            const item = galleryItems[currentIndex];
+            document.getElementById('lightbox-img').src = item.src;
+            document.getElementById('lightbox-title').innerText = item.title;
+            document.getElementById('lightbox-location').innerText = item.location;
+            document.getElementById('lightbox-exif').innerText = item.exif;
+            document.getElementById('lightbox-counter').innerText = `${currentIndex + 1} / ${galleryItems.length}`;
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            updateLightbox();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            updateLightbox();
+        }
+
+        // 鍵盤左右鍵與 Esc 控制 Lightbox
+        document.addEventListener('keydown', (e) => {
+            const lightbox = document.getElementById('lightbox');
+            if (!lightbox.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'ArrowRight') nextImage();
+            }
+        });
+
+        // 報名 Modal 邏輯
+        function openBookingModal(courseName) {
+            document.getElementById('modal-course-name').innerText = `選擇課程：${courseName}`;
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+            alert('感謝您的預約申請！我們將會在 24 小時內與您聯繫發送確認事項與行程細節。');
+            closeBookingModal();
+        }
+
+        // 電子報訂閱處理
+        function handleSubscribe(e) {
+            e.preventDefault();
+            document.getElementById('subscribe-msg').classList.remove('hidden');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>

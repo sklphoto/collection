@@ -330,7 +330,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    <!-- </section> -->
 
                 <!-- 相片項目 7 -->
                 <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-950 border border-slate-800 shadow-xl cursor-pointer" 
@@ -437,7 +437,7 @@
         <!-- 燈箱底欄資訊 -->
         <div class="text-center max-w-2xl mx-auto z-10">
             <h4 id="lightbox-title" class="font-serif text-xl font-bold text-white"></h4>
-       <p id="lightbox-location" class="text-xs text-brand-accent mt-1"></p>
+            <p id="lightbox-location" class="text-xs text-brand-accent mt-1"></p>
        <!-- <p id="lightbox-exif" class="text-xs text-slate-400 mt-2 font-mono bg-slate-900/80 py-1.5 px-4 rounded-full inline-block border border-slate-800"></p> -->
         </div>
     </div>
@@ -565,7 +565,7 @@
         function updateLightbox() {
             const item = galleryItems[currentIndex];
             document.getElementById('lightbox-img').src = item.src;
-       document.getElementById('lightbox-title').innerText = item.title;
+            document.getElementById('lightbox-title').innerText = item.title;
             document.getElementById('lightbox-location').innerText = item.location;
        <!-- document.getElementById('lightbox-exif').innerText = item.exif; -->
             document.getElementById('lightbox-counter').innerText = `${currentIndex + 1} / ${galleryItems.length}`;

@@ -53,7 +53,7 @@
 
     <!-- ========================================================頂部公告欄
     <div class="bg-brand-900 border-b border-slate-800/80 py-2 px-4 text-xs text-center text-slate-400">
-            <span>📸 More photos coming up soon！</span>
+            <span>📸 More photos to be presented soon！</span>
         <a href="#workshops" class="text-brand-accent underline hover:text-amber-300 ml-2 font-medium">了解更多 &rarr;</a>
     </div>====================================================================== -->
 
@@ -69,8 +69,8 @@
             <!-- 桌機選單 -->
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
                 <a href="#home" class="text-brand-accent hover:text-amber-300 transition">Home</a>
-                <a href="#favorites" class="text-slate-300 hover:text-brand-accent transition">Favorites</a>
-                <!-- a href="#favorites" class="text-slate-300 hover:text-brand-accent transition">Favorites</a>
+
+            <!-- a href="#favorites" class="text-slate-300 hover:text-brand-accent transition">Favorites</a>
                 -->
                 <div class="relative group py-2">
                     <button class="text-slate-300 group-hover:text-brand-accent flex items-center gap-1 transition">
@@ -80,14 +80,15 @@
                     <div class="absolute left-0 top-full hidden group-hover:block w-48 bg-brand-900 border border-slate-800 rounded-lg shadow-xl py-2 z-50">
                         <a href="#portfolio" onclick="filterGallery('all')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">All Works</a>
                         <a href="#portfolio" onclick="filterGallery('italy')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">Italy</a>
-                        <a href="#portfolio" onclick="filterGallery('germany')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">Germany</a>
+                        <a href="#portfolio" onclick="filterGallery('germany')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">Germany/Frace</a>
                         <a href="#portfolio" onclick="filterGallery('japan')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">Japan</a>
-                        <a href="#portfolio" onclick="filterGallery('spain')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">Spain</a>
+                        <a href="#portfolio" onclick="filterGallery('england')" class="block px-4 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-brand-accent">England</a>
                     </div>
                 </div>
 
                 <a href="#black and white" class="text-slate-300 hover:text-brand-accent transition">Black and White</a>
                 <a href="#impressionistic" class="text-slate-300 hover:text-brand-accent transition">Impressionistic</a>
+                <a href="#favorites" class="text-slate-300 hover:text-brand-accent transition">Favorites</a>
                 <a href="#contact" class="text-slate-300 hover:text-brand-accent transition">Contact</a>
             </nav>
 
@@ -107,11 +108,11 @@
         <!-- 行動裝置選單抽屜 -->
         <div id="mobile-menu" class="hidden md:hidden bg-brand-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
             <a href="#home" class="block text-slate-200 py-1 font-medium">Home</a>
-            <a href="#favorites" class="block text-slate-200 py-1 font-medium">Favorites</a>
             <a href="#landscape" class="block text-slate-200 py-1 font-medium">Landscape</a>
             <a href="#black and white" class="block text-slate-200 py-1 font-medium">Black and White</a>
             <a href="#impressionistic" class="block text-slate-200 py-1 font-medium">Impressionistic</a>
-            <a href="#contact" class="block text-slate-200 py-1 font-medium">聯絡 Contact</a>
+            <a href="#favorites" class="block text-slate-200 py-1 font-medium">Favorites</a>
+            <a href="#contact" class="block text-slate-200 py-1 font-medium">Contact</a>
         </div>
     </header>
 
@@ -134,7 +135,7 @@
                 Let there be light...
             </h1>
             <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-light mb-10 leading-relaxed">
-                I am an amateur photographer, like to create nature and landscape photography while traveling. You are welcome to join me to explore the beautiful places around the world.
+                I am a photography hobbyist, enjoy capturing and creating nature and landscape photography while traveling. You are welcome to join me to explore the beautiful places around the world.
                 </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#portfolio" class="px-8 py-3.5 bg-brand-accent hover:bg-amber-400 text-slate-950 font-semibold rounded-md shadow-lg transition duration-200">
@@ -217,209 +218,139 @@
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Landscape Portfolio</h2>
                 <p class="text-slate-400 text-sm sm:text-base font-light">
-                    按類別探索精選典藏相片。點擊任何照片可開啟高解析度放大檢視與詳盡的攝影參數資料。
+                    You can navigate to the photos you wish to view by selecting from the categories below. Click on any photo to open an enlarged, high-resolution view.
                 </p>
             </div>
 
-            <!-- 分類篩選按鈕列 -->
+            <!-- 分類篩選按鈕列 =======================================================
             <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12">
-                <button onclick="filterGallery('all')" class="filter-btn active px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition bg-brand-accent text-slate-950 shadow-md">全部作品 All</button>
-                <button onclick="filterGallery('mountain')" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">高山連峰 Mountains</button>
-                <button onclick="filterGallery('coast')" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">海岸湖泊 Lakes & Coasts</button>
-                <button onclick="filterGallery('forest')" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">森林秘境 Forests</button>
-                <button onclick="filterGallery('night')" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">夜空極光 Aurora & Night</button>
-            </div>
+                <button onclick="filterGallery('all')" class="filter-btn active px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition bg-brand-accent text-slate-950 shadow-md">All</button>
+                <button onclick="filterGallery('italy')" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">Italy</button>
+                <button onclick="filterGallery('germany')" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">Germany/Frace</button>
+                <button onclick="filterGallery('japan')" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">Japan</button>
+                <button onclick="filterGallery('england')" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">England</button>
+            </div> ======================================================= -->
 
             <!-- 作品網格 (Photo Grid) -->
             <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <!-- 相片項目 1 -->
                 <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-950 border border-slate-800 shadow-xl cursor-pointer" 
-                     data-category="mountain"
+                     data-category="italy"
                      onclick="openLightbox(0)">
                     <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
                         <img src="https://sklphoto.github.io/collection/images/DLM1088D.jpg?q=80&w=1200&auto=format&fit=crop" 
-                             alt="Highland Sunrise" 
+                             alt="Scala Contarini del Bovolo" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
-                        <span class="text-xs text-brand-accent font-semibold tracking-widest uppercase">Scottish Highlands</span>
-                        <h3 class="text-xl font-serif font-bold text-white mt-1">高地晨曦金光</h3>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Canon EOS R5 | 24mm | f/11 | 1/4s | ISO 100</p>
+                        <span class="text-xs text-brand-accent font-semibold tracking-widest">Scala Contarini del Bovolo, Venezia</span>
+                   <!-- <h3 class="text-xl font-serif font-bold text-white mt-1">Venezia</h3>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Canon EOS R5 | 24mm | f/11 | 1/4s | ISO 100</p> -->
                     </div>
                 </div>
 
                 <!-- 相片項目 2 -->
                 <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-950 border border-slate-800 shadow-xl cursor-pointer" 
-                     data-category="coast"
+                     data-category="italy"
                      onclick="openLightbox(1)">
                     <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
                         <img src="https://sklphoto.github.io/collection/images/DLM1095D.jpg?q=80&w=1200&auto=format&fit=crop" 
-                             alt="Coastal Waves" 
+                             alt="Canal, Venezia" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
-                        <span class="text-xs text-brand-accent font-semibold tracking-widest uppercase">Isle of Skye</span>
-                        <h3 class="text-xl font-serif font-bold text-white mt-1">斯凱島靜謐海岸</h3>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Sony A7R IV | 16mm | f/16 | 2.5s | ISO 50</p>
+                        <span class="text-xs text-brand-accent font-semibold tracking-widest">Canal, Venezia</span>
+                   <!-- <h3 class="text-xl font-serif font-bold text-white mt-1">canel, Venezia</h3>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Sony A7R IV | 16mm | f/16 | 2.5s | ISO 50</p> -->
                     </div>
                 </div>
 
                 <!-- 相片項目 3 -->
                 <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-950 border border-slate-800 shadow-xl cursor-pointer" 
-                     data-category="night"
+                     data-category="italy"
                      onclick="openLightbox(2)">
                     <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
                         <img src="https://sklphoto.github.io/collection/images/DLM1113D.jpg?q=80&w=1200&auto=format&fit=crop" 
-                             alt="Aurora Borealis" 
+                             alt="Canal, Venezia" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
-                        <span class="text-xs text-brand-accent font-semibold tracking-widest uppercase">Iceland</span>
-                        <h3 class="text-xl font-serif font-bold text-white mt-1">冰島極光夜空</h3>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Nikon Z9 | 14mm | f/2.8 | 6s | ISO 3200</p>
+                        <span class="text-xs text-brand-accent font-semibold tracking-widest">Canal, Venezia</span>
+                   <!-- <h3 class="text-xl font-serif font-bold text-white mt-1">canel, Venezia</h3>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Nikon Z9 | 14mm | f/2.8 | 6s | ISO 3200</p> -->
                     </div>
                 </div>
 
                 <!-- 相片項目 4 -->
                 <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-950 border border-slate-800 shadow-xl cursor-pointer" 
-                     data-category="forest"
+                     data-category="germany"
                      onclick="openLightbox(3)">
                     <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
-                        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop" 
+                        <img src="https://sklphoto.github.io/collection/images/GER2102P.jpg?q=80&w=1200&auto=format&fit=crop" 
                              alt="Misty Forest" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
                         <span class="text-xs text-brand-accent font-semibold tracking-widest uppercase">Black Forest</span>
                         <h3 class="text-xl font-serif font-bold text-white mt-1">黑森林迷霧晨光</h3>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Canon EOS R5 | 70mm | f/8 | 1/15s | ISO 200</p>
+                        <!-- <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Canon EOS R5 | 70mm | f/8 | 1/15s | ISO 200</p> -->
                     </div>
                 </div>
 
                 <!-- 相片項目 5 -->
                 <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-950 border border-slate-800 shadow-xl cursor-pointer" 
-                     data-category="mountain"
+                     data-category="germany"
                      onclick="openLightbox(4)">
                     <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop" 
+                        <img src="https://sklphoto.github.io/collection/images/GER2120.jpg?q=80&w=1200&auto=format&fit=crop" 
                              alt="Dolomites Range" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
                         <span class="text-xs text-brand-accent font-semibold tracking-widest uppercase">Dolomites, Italy</span>
                         <h3 class="text-xl font-serif font-bold text-white mt-1">多洛米蒂白雲石山脈</h3>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Fujifilm GFX 100S | 35mm | f/11 | 1/8s | ISO 100</p>
+                        <!-- <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Fujifilm GFX 100S | 35mm | f/11 | 1/8s | ISO 100</p> -->
                     </div>
                 </div>
 
                 <!-- 相片項目 6 -->
                 <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-950 border border-slate-800 shadow-xl cursor-pointer" 
-                     data-category="coast"
+                     data-category="germany"
                      onclick="openLightbox(5)">
                     <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
-                        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1200&auto=format&fit=crop" 
+                        <img src="https://sklphoto.github.io/collection/images/GER2129.jpg?q=80&w=1200&auto=format&fit=crop" 
                              alt="Alpine Lake Reflection" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
                         <span class="text-xs text-brand-accent font-semibold tracking-widest uppercase">Swiss Alps</span>
                         <h3 class="text-xl font-serif font-bold text-white mt-1">阿爾卑斯高山倒影湖</h3>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Sony A7R IV | 24mm | f/9 | 1/60s | ISO 100</p>
+                        <!-- <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Sony A7R IV | 24mm | f/9 | 1/60s | ISO 100</p> -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 攝影工作坊 Workshops Section -->
-    <section id="workshops" class="py-24 bg-brand-950 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
-                <div>
-                    <span class="text-brand-accent text-sm font-semibold tracking-widest uppercase">Workshops & Photography Tours</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">攝影工作坊與實地導覽</h2>
-                </div>
-                <p class="text-slate-400 max-w-md text-sm mt-4 md:mt-0">
-                    不論您是攝影新手還是資深玩家，加入我的私人 1-on-1 或小班制拍攝行程，提升您的構圖與光影掌控力。
-                </p>
-            </div>
-
-            <!-- 卡片列表 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- 卡片 1 -->
-                <div class="bg-brand-900 rounded-2xl p-8 border border-slate-800 hover:border-brand-accent/50 transition flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/30 flex items-center justify-center text-brand-accent mb-6">
-                            <i class="fa-solid fa-mountain text-xl"></i>
-                        </div>
-                        <span class="text-xs text-slate-400 font-medium">3 Days Masterclass</span>
-                        <h3 class="text-xl font-serif font-bold text-white mt-1 mb-3">蘇格蘭高地風光實戰班</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            深入高地荒野，學習在多變的天氣下捕捉極具戲劇張力的晨昏光影與長曝光海岸技巧。
-                        </p>
+                <!-- 相片項目 7 -->
+                <div class="gallery-item group relative rounded-xl overflow-hidden bg-brand-950 border border-slate-800 shadow-xl cursor-pointer" 
+                     data-category="germany"
+                     onclick="openLightbox(6)">
+                    <div class="aspect-w-4 aspect-h-3 overflow-hidden h-72">
+                        <img src="https://sklphoto.github.io/collection/images/GER2135P.jpg?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Alpine Lake Reflection" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
-                    <div>
-                        <div class="text-2xl font-bold text-brand-accent mb-4">£650 <span class="text-xs text-slate-400 font-normal">/ 人</span></div>
-                        <button onclick="openBookingModal('蘇格蘭高地風光實戰班')" class="w-full py-3 rounded-lg bg-slate-800 hover:bg-brand-accent hover:text-slate-950 text-white font-medium text-sm transition">預約報名</button>
-                    </div>
-                </div>
-
-                <!-- 卡片 2 -->
-                <div class="bg-brand-900 rounded-2xl p-8 border border-brand-accent/40 shadow-2xl relative flex flex-col justify-between">
-                    <span class="absolute -top-3 right-6 px-3 py-1 bg-brand-accent text-slate-950 font-bold text-[10px] rounded-full uppercase tracking-wider">熱門首選</span>
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/30 flex items-center justify-center text-brand-accent mb-6">
-                            <i class="fa-solid fa-user-gear text-xl"></i>
-                        </div>
-                        <span class="text-xs text-slate-400 font-medium">1-on-1 Personalized Day</span>
-                        <h3 class="text-xl font-serif font-bold text-white mt-1 mb-3">1對1 一日精準指導日</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            量身打造的拍攝行程與後製技巧教學（Lightroom/Photoshop），全天候補光與現場隨時指點。
-                        </p>
-                    </div>
-                    <div>
-                        <div class="text-2xl font-bold text-brand-accent mb-4">£380 <span class="text-xs text-slate-400 font-normal">/ 全天</span></div>
-                        <button onclick="openBookingModal('1對1 一日精準指導日')" class="w-full py-3 rounded-lg bg-brand-accent hover:bg-amber-400 text-slate-950 font-semibold text-sm transition shadow-lg">立即預定</button>
-                    </div>
-                </div>
-
-                <!-- 卡片 3 -->
-                <div class="bg-brand-900 rounded-2xl p-8 border border-slate-800 hover:border-brand-accent/50 transition flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/30 flex items-center justify-center text-brand-accent mb-6">
-                            <i class="fa-solid fa-snowflake text-xl"></i>
-                        </div>
-                        <span class="text-xs text-slate-400 font-medium">5 Days Expedition</span>
-                        <h3 class="text-xl font-serif font-bold text-white mt-1 mb-3">冰島極光與藍冰洞探索</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            冬季遠征冰島，追尋夢幻綠色極光與沉積千年的黑沙灘冰塊，體驗極致冰雪景緻。
-                        </p>
-                    </div>
-                    <div>
-                        <div class="text-2xl font-bold text-brand-accent mb-4">£1,450 <span class="text-xs text-slate-400 font-normal">/ 人</span></div>
-                        <button onclick="openBookingModal('冰島極光與藍冰洞探索')" class="w-full py-3 rounded-lg bg-slate-800 hover:bg-brand-accent hover:text-slate-950 text-white font-medium text-sm transition">預約報名</button>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                        <span class="text-xs text-brand-accent font-semibold tracking-widest uppercase">Swiss Alps</span>
+                        <h3 class="text-xl font-serif font-bold text-white mt-1">阿爾卑斯高山倒影湖</h3>
+                        <!-- <p class="text-xs text-slate-300 mt-2 line-clamp-1"><i class="fa-solid fa-camera mr-1 text-slate-400"></i> Sony A7R IV | 24mm | f/9 | 1/60s | ISO 100</p> -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 電子報訂閱區塊 Newsletter Section -->
-    <section class="py-16 bg-gradient-to-r from-brand-900 via-slate-900 to-brand-900 border-y border-slate-800">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-3">加入 攝影社群</h3>
-            <p class="text-slate-400 text-sm mb-8 font-light">
-                ________________
-            </p>
-            <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="handleSubscribe(event)">
-                <input type="email" required placeholder="輸入您的 Email 地址..." class="flex-grow px-4 py-3 rounded-md bg-brand-950 border border-slate-700 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-brand-accent">
-                <button type="submit" class="px-6 py-3 bg-brand-accent hover:bg-amber-400 text-slate-950 font-semibold text-sm rounded-md transition shadow-md whitespace-nowrap">
-                    免費訂閱
-                </button>
-            </form>
-            <div id="subscribe-msg" class="hidden text-brand-accent text-xs mt-3">感謝您的訂閱！我們將不定時發送最新作品與拍攝指南。</div>
-        </div>
-    </section>
 
     <!-- 頁尾 Footer -->
     <footer id="contact" class="bg-brand-950 pt-16 pb-12 text-slate-400 border-t border-slate-900 text-sm">
@@ -494,7 +425,7 @@
                 <img id="lightbox-img" src="" alt="" class="max-h-[70vh] max-w-full object-contain rounded-md shadow-2xl">
                 <!-- 浮水印 overlay -->
                 <div class="absolute bottom-4 right-4 pointer-events-none text-white/40 text-xs font-serif tracking-widest bg-black/40 px-3 py-1 rounded backdrop-blur-sm">
-                    © DRL Photography
+                    © Steve Liu Photography
                 </div>
             </div>
 
@@ -547,22 +478,22 @@
         // 作品集資料
         const galleryItems = [
             {
-                src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop",
-                title: "高地晨曦金光",
-                location: "Scottish Highlands, UK",
-                exif: "Canon EOS R5 | 24mm | f/11 | 1/4s | ISO 100"
+                src: "https://sklphoto.github.io/collection/images/DLM1088D.jpg?q=80&w=1200&auto=format&fit=crop",
+                title: "Scala Contarini del Bovolo",
+                location: "Venezia, Italy",
+                <!-- exif: "Canon EOS R5 | 24mm | f/11 | 1/4s | ISO 100" -->
             },
             {
-                src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop",
-                title: "斯凱島靜謐海岸",
-                location: "Isle of Skye, UK",
-                exif: "Sony A7R IV | 16mm | f/16 | 2.5s | ISO 50"
+                src: "https://sklphoto.github.io/collection/images/DLM1095D.jpg?q=80&w=1200&auto=format&fit=crop",
+                title: "Canel",
+                location: "Venezia, Italy",
+                <!-- exif: "Sony A7R IV | 16mm | f/16 | 2.5s | ISO 50" -->
             },
             {
-                src: "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?q=80&w=1200&auto=format&fit=crop",
-                title: "冰島極光夜空",
-                location: "Jökulsárlón, Iceland",
-                exif: "Nikon Z9 | 14mm | f/2.8 | 6s | ISO 3200"
+                src: "https://sklphoto.github.io/collection/images/DLM1113D.jpg?q=80&w=1200&auto=format&fit=crop",
+                title: "Canel",
+                location: "Venezia, Italy",
+                <!-- exif: "Nikon Z9 | 14mm | f/2.8 | 6s | ISO 3200" -->
             },
             {
                 src: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop",
@@ -636,7 +567,7 @@
             document.getElementById('lightbox-img').src = item.src;
             document.getElementById('lightbox-title').innerText = item.title;
             document.getElementById('lightbox-location').innerText = item.location;
-            document.getElementById('lightbox-exif').innerText = item.exif;
+       <!-- document.getElementById('lightbox-exif').innerText = item.exif; -->
             document.getElementById('lightbox-counter').innerText = `${currentIndex + 1} / ${galleryItems.length}`;
         }
 
